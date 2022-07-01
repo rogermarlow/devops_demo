@@ -1,6 +1,8 @@
 ## DevOps Demo
 
-This repo demonstrated Infrastructure as Code using Vagrant and Ansible.
+This repo demonstrates Infrastructure as Code using Vagrant and Ansible.
+
+![Architecture](/architecture.svg)]
 
 ### Get this repo
 
@@ -37,3 +39,10 @@ $ vagrant ssh backend2
 ```
 Hit the load balancer in a browser http://192.168.56.17 and see the entry in the LB log and one of the backend logs. Hit Refresh the page and see the LB entry and an entry in the other backend log.
 
+### Meta
+
+To generate the diagram on this page use graphviz
+
+```
+$ dot -Tsvg diagram.dot > architecture.svg
+```

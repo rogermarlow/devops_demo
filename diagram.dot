@@ -1,0 +1,13 @@
+digraph R {
+  rankdir=LR
+  node [style=rounded]
+  
+  browser  [shape=box label="Browser"]
+  balancer [shape=box label="Load Balancer"]
+  node1    [shape=box label="Backend 1"]
+  node2    [shape=box label="Backend 2"]
+
+  browser -> balancer
+  balancer -> node1
+  balancer -> node2
+}
