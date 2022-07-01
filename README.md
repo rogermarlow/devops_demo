@@ -2,21 +2,21 @@
 
 This repo demonstrated Infrastructure as Code using Vagrant and Ansible.
 
-### Install VirtualBox
-
-Get it from [here](https://www.virtualbox.org/wiki/Downloads)
-
-### Install Vagrant
-
-Get it from [here](https://www.vagrantup.com/downloads)
-
-### Install Ansible
-
-Get it from [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
-
 ### Get this repo
 
-Clone this repo onto your laptop. `cd` into the repo's top level directory.
+Clone this repo onto your laptop and `cd` into its top level directory.
+
+### Install tools
+
+Get Ansible from [here](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+
+We now use Ansible to get the other tools: VirtualBox and Vagrant
+```
+$ ansible-galaxy install -r requirements.yml
+$ ansible-playbook --ask-become-pass playbook-bootstrap.yaml
+```
+
+### Run the demo
 
 Open the VirtualBox UI so you can see the machines being created.
 

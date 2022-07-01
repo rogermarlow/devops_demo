@@ -1,0 +1,13 @@
+---
+ - name: Bootstrap Ansible management of Mac
+   hosts: localhost
+   connection: local
+
+   vars:
+    homebrew_cask_appdir: /Applications
+    homebrew_cask_apps:
+      - virtualbox
+      - vagrant
+   roles:
+      - role: elliotweiser.osx-command-line-tools
+      - role: geerlingguy.homebrew
