@@ -1,0 +1,13 @@
+---
+- name: Install backends
+  hosts:
+    - backend1
+    - backend2
+  tasks:
+    - name: Install Apache
+      become: yes
+      apt:
+        update_cache: yes
+        pkg:
+          - apache2
+  

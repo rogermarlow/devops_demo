@@ -1,0 +1,32 @@
+---
+- name: Install load balancer
+  hosts:
+    - balancer
+  tasks:
+    - name: Install HAProxy
+      become: yes
+      apt:
+        update_cache: yes
+        pkg:
+          - haproxy
+
+    - name: Configure HAProxy
+      become: yes
+      ansible.builtin.blockinfile:
+        path: /etc/haproxy/haproxy.cfg
+        block: |
+          frontend http_front
+             bind *:80
+             stats uri /haproxy?stats
+             default_backend http_back
+          backend http_back
+             balance roundrobin
+             server backend1 192.168.56.18:80 check
+             server backend2 192.168.56.19:80 check
+
+    - name: Restart HAProxy to read new config
+      service:
+        name: haproxy
+        state: restarted
+      become: yes
+  
