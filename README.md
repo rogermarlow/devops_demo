@@ -2,7 +2,9 @@
 
 This repo demonstrates Infrastructure as Code using Vagrant and Ansible.
 
-![Architecture](/architecture.svg)
+<p align="center">
+  <img src="./architecture.svg" alt="Architecture"/>
+</p>
 
 ### Get this repo
 
