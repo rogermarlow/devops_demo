@@ -1,0 +1,7 @@
+all:
+  hosts:
+    balancer:
+    backend1:
+      colour: '#53ffff'
+    backend2:
+      colour: '#66cdaa'

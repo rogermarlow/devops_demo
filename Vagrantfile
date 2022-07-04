@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
     end
   end
 
+  # If you change N>2 then add more entries to the inventory file.
   N = 2
   (1..2).each do |id|
     config.vm.define "backend#{id}" do |be|
@@ -18,6 +19,7 @@ Vagrant.configure("2") do |config|
       be.vm.network "private_network", ip: "192.168.56.#{id + 17}"
       if id == N
         be.vm.provision "ansible" do |ansible|
+          ansible.inventory_path = "./inventory"
           ansible.limit = "all"
           ansible.playbook = "playbook-backend.yaml"
         end
