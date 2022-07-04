@@ -45,6 +45,8 @@ Selecting a profile causes a tab to be openned with that colour scheme.
 
 Turn off line wrapping: `tput rmam`. Re-enable it `tput smam`.
 
+![Screenshot](./screen_shot.png)
+
 ### Doing more work on the VMs
 If you want to run the Ansible playbooks without the Vagrant provisioner then you need the machine names in the inventory file in your ssh config. Run `vagrant ssh-config` and copy the results into `~/.ssh/config`. Then you can run `ansible-playbook playbook-backend.yaml -i inventory`.
 
