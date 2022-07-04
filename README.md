@@ -39,9 +39,11 @@ $ vagrant ssh backend2
 ```
 Hit the load balancer in a browser http://192.168.56.17 and see the entry in the LB log and one of the backend logs. Hit Refresh the page and see the LB entry and an entry in the other backend log.
 
-### Coloured iTerm2 windows
+### Coloured non-wrapping iTerm2 windows
 Load iTerm2Profiles.json into iTerm2 (Profile -> Edit Profiles... -> Other Actions... -> Import JSON Profiles...)
 Selecting a profile causes a tab to be openned with that colour scheme.
+
+Turn off line wrapping: `tput rmam`. Re-enable it `tput smam`.
 
 ### Doing more work on the VMs
 If you want to run the Ansible playbooks without the Vagrant provisioner then you need the machine names in the inventory file in your ssh config. Run `vagrant ssh-config` and copy the results into `~/.ssh/config`. Then you can run `ansible-playbook playbook-backend.yaml -i inventory`.
