@@ -1,5 +1,6 @@
 ---
- - name: Bootstrap Ansible management of Mac
+ # Play 1
+ - name: Get VirtualBox and Vagrant
    hosts: localhost
    connection: local
 
@@ -11,3 +12,6 @@
    roles:
       - role: elliotweiser.osx-command-line-tools
       - role: geerlingguy.homebrew
+
+ # Play 2
+ # - name:

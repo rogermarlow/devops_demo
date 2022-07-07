@@ -1,0 +1,17 @@
+---
+- name: Test reachability to all three machines
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  tasks:
+    - uri:
+        url: "{{ item }}"
+        return_content: yes
+      register: webpage
+      failed_when: "'reached' is not in webpage.content"
+      loop:
+        - http://192.168.56.17 
+        - http://192.168.56.18
+        - http://192.168.56.19 
+
+      

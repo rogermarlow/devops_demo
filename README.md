@@ -24,6 +24,10 @@ Open the VirtualBox UI so you can see the machines being created.
 
 ` $ vagrant up --provision`
 
+Check everything is ok with the tests.
+
+` $ ansible-playbook playbook-test.yaml -i inventory`
+
 When the three machines are running, log in to each of them in a separate terminal window and tail the logs
 
 ```
