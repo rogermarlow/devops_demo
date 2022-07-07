@@ -2,7 +2,9 @@
 
 This repo demonstrates Infrastructure as Code using Vagrant and Ansible.
 
-![Architecture](/architecture.svg)
+<p align="center">
+  <img src="./architecture.svg" alt="Architecture"/>
+</p>
 
 ### Get this repo
 
@@ -34,9 +36,15 @@ When the three machines are running, log in to each of them in a separate termin
 $ vagrant ssh balancer
 % sudo tail -f /var/log/haproxy.log
 :
+```
+and in another iTerm2 window:
+```
 $ vagrant ssh backend1
 % sudo tail -f /var/log/apache2/access.log
 :
+```
+and another:
+```
 $ vagrant ssh backend2
 % sudo tail -f /var/log/apache2/access.log
 :
@@ -45,9 +53,9 @@ Hit the load balancer in a browser http://192.168.56.17 and see the entry in the
 
 ### Coloured non-wrapping iTerm2 windows
 Load iTerm2Profiles.json into iTerm2 (Profile -> Edit Profiles... -> Other Actions... -> Import JSON Profiles...)
-Selecting a profile causes a tab to be openned with that colour scheme.
+Selecting a profile causes a tab to be opened with that colour scheme.
 
-Turn off line wrapping: `tput rmam`. Re-enable it `tput smam`.
+The logs are easier to see when they are just one line per entry. Turn off line wrapping with: `tput rmam`. Re-enable it with `tput smam`.
 
 ![Screenshot](./screen_shot.png)
 
