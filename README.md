@@ -51,6 +51,12 @@ $ vagrant ssh backend2
 ```
 Hit the load balancer in a browser http://192.168.56.17 and see the entry in the LB log and one of the backend logs. Hit Refresh the page and see the LB entry and an entry in the other backend log.
 
+### Tidy up
+Clear up the VMs
+```
+$ vagrant destroy
+```
+
 ### Coloured non-wrapping iTerm2 windows
 Load iTerm2Profiles.json into iTerm2 (Profile -> Edit Profiles... -> Other Actions... -> Import JSON Profiles...)
 Selecting a profile causes a tab to be opened with that colour scheme.
